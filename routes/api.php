@@ -1,11 +1,15 @@
 <?php
 
-Route::apiResource('/question', 'QuestionController');
+Route::group([
 
-Route::apiResource('/category', 'CategoryController');
+'middleware' => 'api',
+'prefix' => 'auth'
 
-Route::apiResource('/question/{question}/reply', 'ReplyController');
+], function ($router) {
 
-Route::post('/like/{reply}', 'LikeController@likeIt');
+Route::post('login', 'AuthController@login');
+Route::post('logout', 'AuthController@logout');
+Route::post('refresh', 'AuthController@refresh');
+Route::post('me', 'AuthController@me');
 
-Route::delete('/like/{reply}', 'LikeController@unlikeIt');
+});
