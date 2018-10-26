@@ -1,3 +1,4 @@
+window.Vue = require('vue');
 
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
@@ -11,7 +12,7 @@ window.Popper = require('popper.js').default;
 try {
     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap');
+    requirwindow.Vue = require('vue');e('bootstrap');
 } catch (e) {}
 
 /**
